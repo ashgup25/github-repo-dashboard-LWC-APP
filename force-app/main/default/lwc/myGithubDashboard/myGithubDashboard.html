@@ -1,0 +1,32 @@
+<template>
+    <div class="flex flex-col text-black"
+        style="padding-left:20%;background-color:white;min-height:100vh; padding-right:20%">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaRhhw-Cas7o_eDb_w5BJvrORsDQYcV_Jdfw&usqp=CAUwN42u4DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADyEf7G5PvIuAvy1AAAAAElFTkSuQmCC"
+                style="height: 50px; width:50px" />
+        </div>
+        <div class="flex gap-2">
+            <input class="w-100 border-2 b-rad-20 b-color p-2" placeholder="Enter username" style=" width:70%"
+                value={userName} onchange={handleInputValue} />
+            <button class="button-7" role="button" onclick={handleChange}> Submit</button>
+        </div>
+        <c-profile-card lwc:if={data.name} profile-data={data}> </c-profile-card>
+        <div lwc:if={xyz}>
+            <c-bar-chart chart={xyz}></c-bar-chart>
+        </div>
+        <div class="flex flex-col mt-2" lwc:if={data.name}>
+            <div class="one">
+                <h1>Repository</h1>
+            </div>
+            <template for:each={repos} for:item="repo">
+                <c-repo-tile key={repo.id} repo={repo} user-name = {userName} ></c-repo-tile>
+            </template>
+        </div>
+        <div lwc:if={load} class="loader-container">
+            <div class="loader"></div>
+        </div>
+        <button class="button-19" role="button" style="margin-bottom: 100px;" onclick={addMore} lwc:if={data.name}>add
+            more </button>
+    </div>
+
+</template>

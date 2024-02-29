@@ -1,0 +1,38 @@
+<template>
+    <div >
+        <div onclick={handleChange} class="flex bg-purple border-2 b-rad-20 p-2 mt-2">
+            <div class="flex flex-col justify-center" style="flex-basis:30%">
+                <div class="uppercase-text">
+                    {repo.name}
+                </div>
+
+            </div>
+            <div class="flex flex-row justify-space-around" style="flex-basis:70%">
+                <div class="repo-design">
+                    <p>
+                        watchers
+                        :
+                        {repo.watchers}
+                    </p>
+                </div>
+                <div class="repo-design">
+                    <p>
+                        forks
+                        :
+                        {repo.forks}
+                    </p>
+                </div>
+                <div class="repo-design">
+                    <p>
+                        Open Issues
+                        :
+                        {repo.open_issues}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div >
+            <canvas class="donutChart" lwc:dom="manual" ></canvas>
+        </div>
+    </div>
+</template>

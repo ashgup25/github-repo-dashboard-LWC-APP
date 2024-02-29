@@ -1,0 +1,49 @@
+<template>
+    <div class="mt-2 border-2 b-rad-20 b-color p-2 w-100" lwc:if={profileData.name} > 
+        <div class=" flex flex-row" >
+            <div class="basis-20">
+                <img src={profileData.avatar_url} style="height:100px;border-radius:20px" />
+            </div>
+            <div class="basis-80 flex flex-col">
+                <div class="flex flex-row">
+                    <span style="font-weight: 900;
+                    ">
+                        Name:
+                    </span>
+                    <span >
+                        {profileData.name}
+                    </span>
+                </div>
+                <div class="flex">
+                    <span style="font-weight: 900">
+                        Bio:
+                    </span>
+                    <span >
+                        {profileData.bio}
+                    </span>
+                </div>
+                <div class="flex">
+                    <span style="font-weight: 900">
+                        Location:
+                    </span>
+                    <span >
+                        {profileData.location}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex flex-row gap-2 justify-space-around">
+            <div class="border-2 b-rad-20 px-2 py-2" >
+               <span > Follower </span> : {profileData.followers}
+            </div>
+            <div class="border-2 b-rad-20 px-2 py-2" >
+                <span> Public repos </span> :  {profileData.public_repos}
+            </div>
+            <div class="border-2 b-rad-20 px-2 py-2">
+                <span> Public gists </span>  : {profileData.public_gists}
+            </div>
+        </div>
+
+    </div>
+</template>
